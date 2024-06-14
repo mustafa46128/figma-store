@@ -1,118 +1,386 @@
+import Cards from "@/components/Cards";
+import Cards1 from "@/components/Cards1";
+import Cricle from "@/components/Circle";
+import Footer from "@/components/Footer";
+
+import SvgCutout1 from "@/components/Heroimage";
+
+import {
+  Comet,
+  Hourglass,
+  Snake,
+  SymbolDots,
+  SymbolSun,
+  SymbolTri,
+  Wordsymbol,
+  Zag,
+} from "@/components/Icons";
+
+import Navbar from "@/components/Navbar";
+
+import Wave from "@/components/Waves";
 import Image from "next/image";
-import { Inter } from "next/font/google";
+import React from "react";
+import Heroimages2 from "@/components/Heroimages2";
+import Shapertimer from "@/components/Shapetimer";
+import Sliding from "@/components/Swiper";
 
-const inter = Inter({ subsets: ["latin"] });
+const cards = [
+  {
+    image: "/image1.png",
+    txt: "New!",
+    title: "Design in Bloom T-shirts (Puff Ink)",
+    price: "¥3,400",
+  },
+  {
+    image: "/image2.png",
+    txt: "New!",
+    title: "Gridlock Washi Tape",
+    price: "¥135",
+  },
+  {
+    image: "/image5.png",
+    txt: "New!",
+    title: "Version History Coach Jacket",
+    price: "¥6,200",
+  },
+  {
+    image: "/image3.png",
+    txt: "New!",
+    title: "Best Buddy Pin",
+    price: "¥270",
+  },
+];
+const carddata = [
+  {
+    image: "/image1.png",
+    txt: "New!",
+    title: "Design in Bloom T-shirts (Puff Ink)",
+    price: "¥3,400",
+  },
+  {
+    image: "/image2.png",
+    txt: "New!",
+    title: "Gridlock Washi Tape",
+    price: "¥135",
+  },
+  {
+    image: "/image5.png",
+    txt: "New!",
+    title: "Version History Coach Jacket",
+    price: "¥6,200",
+  },
+  {
+    image: "/image3.png",
+    txt: "New!",
+    title: "Best Buddy Pin",
+    price: "¥270",
+  },
+  {
+    image: "/image1.png",
+    txt: "New!",
+    title: "Design in Bloom T-shirts (Puff Ink)",
+    price: "¥3,400",
+  },
+  {
+    image: "/image2.png",
+    txt: "New!",
+    title: "Gridlock Washi Tape",
+    price: "¥135",
+  },
+  {
+    image: "/image5.png",
+    txt: "New!",
+    title: "Version History Coach Jacket",
+    price: "¥6,200",
+  },
+  {
+    image: "/image3.png",
+    txt: "New!",
+    title: "Best Buddy Pin",
+    price: "¥270",
+  },
+  {
+    image: "/image1.png",
+    txt: "New!",
+    title: "Design in Bloom T-shirts (Puff Ink)",
+    price: "¥3,400",
+  },
+  {
+    image: "/image2.png",
+    txt: "New!",
+    title: "Gridlock Washi Tape",
+    price: "¥135",
+  },
+  {
+    image: "/image5.png",
+    txt: "New!",
+    title: "Version History Coach Jacket",
+    price: "¥6,200",
+  },
+  {
+    image: "/image3.png",
+    txt: "New!",
+    title: "Best Buddy Pin",
+    price: "¥270",
+  },
+  {
+    image: "/image1.png",
+    txt: "New!",
+    title: "Design in Bloom T-shirts (Puff Ink)",
+    price: "¥3,400",
+  },
+  {
+    image: "/image2.png",
+    txt: "New!",
+    title: "Gridlock Washi Tape",
+    price: "¥135",
+  },
+  {
+    image: "/image5.png",
+    txt: "New!",
+    title: "Version History Coach Jacket",
+    price: "¥6,200",
+  },
+  {
+    image: "/image3.png",
+    txt: "New!",
+    title: "Best Buddy Pin",
+    price: "¥270",
+  },
+  {
+    image: "/image1.png",
+    txt: "New!",
+    title: "Design in Bloom T-shirts (Puff Ink)",
+    price: "¥3,400",
+  },
+  {
+    image: "/image2.png",
+    txt: "New!",
+    title: "Gridlock Washi Tape",
+    price: "¥135",
+  },
+  {
+    image: "/image5.png",
+    txt: "New!",
+    title: "Version History Coach Jacket",
+    price: "¥6,200",
+  },
+  {
+    image: "/image3.png",
+    txt: "New!",
+    title: "Best Buddy Pin",
+    price: "¥270",
+  },
+];
 
-export default function Home() {
+function index() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <div className="w-full">
+        <Navbar />
+        <div className=" bg-[#ffc700]">
+          {/* <SvgCutout1 url="/image1.png" />
+          <Heroimages2 url="image1.webp" />
+          <Shapertimer url="image2.webp" />
+          <Cricle url="/Cricle.webp" />
+          <Wave url="/Wave.webp" /> */}
+          <Sliding />
+        </div>
+        <div className="px-10">
+          <div className="w-full flex flex-wrap justify-center">
+            <h1 className="flex justify-center items-center text-[50px] font-bold  gap-x-5">
+              FIGMA'S{" "}
+              <span>
+                <Wordsymbol />
+              </span>{" "}
+              COLLECTION{" "}
+              <span>
+                <Hourglass />
+              </span>{" "}
+              OF
+            </h1>
+            <h1 className="flex  justify-center items-center text-[50px] font-bold  gap-x-5">
+              LAYERS{" "}
+              <span>
+                <Zag />
+              </span>
+              AND
+              <span>
+                <SymbolDots />
+              </span>{" "}
+              COMPONENTS{" "}
+              <span>
+                <SymbolSun />
+              </span>{" "}
+              FOR
+            </h1>
+            <h1 className="flex  justify-center items-center text-[50px] font-bold w-[910px] gap-x-5">
+              YOU{" "}
+              <span>
+                <Comet />
+              </span>{" "}
+              AND
+              <span>
+                <Snake />
+              </span>
+              YOUR{" "}
+              <span>
+                <SymbolTri />
+              </span>{" "}
+              FRIENDS
+            </h1>
+          </div>
+          <div className="grid grid-cols-4 gap-8 mt-10">
+            {cards?.map((e, index) => (
+              <Cards
+                key={index}
+                image={e?.image}
+                price={e?.price}
+                title={e?.title}
+                txt={e?.txt}
+              />
+            ))}
+          </div>
+          <div className="w-full grid grid-cols-2 gap-5 mt-10">
+            <div className="w-full gap-5">
+              <div className="flex gap-8">
+                <div className="">
+                  <Cards
+                    image={"/image3.png"}
+                    price={"300"}
+                    title={"Gridlock washi tape"}
+                    txt={"NEW!"}
+                  />
+                </div>
+                <div className="">
+                  <Cards
+                    image={"/image3.png"}
+                    price={"Rs.7,100"}
+                    title={"Design in bloom tee"}
+                    txt={"New!"}
+                  />
+                </div>
+              </div>
+              <div className="mt-5">
+                <Cards1
+                  image={"/image3.png"}
+                  price={"Rs.7,100"}
+                  title={"On brand hat"}
+                  txt={"New!"}
+                />
+              </div>
+            </div>
+            <div className="w-full">
+              <div className="">
+                <Cards1
+                  image={"/image3.png"}
+                  price={"Rs.5,700"}
+                  title={"Shape up tee"}
+                  txt={"New!"}
+                />
+              </div>
+              <div className="flex gap-8 mt-5">
+                <div className="">
+                  <Cards
+                    image={"/image3.png"}
+                    price={"Rs.2,900"}
+                    title={"Band together socks"}
+                    txt={"New!"}
+                  />
+                </div>
+                <div className="">
+                  <Cards
+                    image={"/image3.png"}
+                    price={"Rs.5,700"}
+                    title={"Dress code hat"}
+                    txt={"New!"}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-4 gap-8 mt-10">
+            {cards?.map((e, index) => (
+              <Cards
+                key={index}
+                image={e?.image}
+                price={e?.price}
+                title={e?.title}
+                txt={e?.txt}
+              />
+            ))}
+          </div>
+          <div className="w-full grid grid-cols-2 gap-5 mt-10">
+            <div className="w-full gap-5">
+              <div className="flex gap-8">
+                <div className="">
+                  <Cards
+                    image={"/image3.png"}
+                    price={"Rs.600"}
+                    title={"Power points pin"}
+                    txt={"New!"}
+                  />
+                </div>
+                <div className="">
+                  <Cards
+                    image={"/image3.png"}
+                    price={"Rs.5,700"}
+                    title={"Framework tee"}
+                    txt={"New!"}
+                  />
+                </div>
+              </div>
+              <div className="mt-5">
+                <Cards1
+                  image={"/image3.png"}
+                  price={"Rs.5,700"}
+                  title={"Rainbow logo tee"}
+                />
+              </div>
+            </div>
+            <div className="w-full">
+              <div className="mb-12">
+                <Cards1
+                  image={"/image3.png"}
+                  price={"Rs.2,900"}
+                  title={"Comments notebook"}
+                />
+              </div>
+              <div className="flex gap-8">
+                <div className="">
+                  <Cards
+                    image={"/image3.png"}
+                    price={"Rs.5,700"}
+                    title={"Figma logo hat"}
+                  />
+                </div>
+                <div className="">
+                  <Cards
+                    image={"/image3.png"}
+                    price={"Rs.600"}
+                    title={"Multicursor pin"}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-4 gap-8 mt-10">
+            {carddata?.map((e, index) => (
+              <Cards
+                key={index}
+                image={e?.image}
+                price={e?.price}
+                title={e?.title}
+                txt={e?.txt}
+              />
+            ))}
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <Footer />
+    </>
   );
 }
+
+export default index;
